@@ -5,4 +5,24 @@
  *                                                  ~~ last updated 07 Oct 2013
  */
 
+@media all {
+
+ /* Twitter Bootstrap's fixed navbar overlays other content unless you add
+  * padding to the top of the body, and by default the navbar is 50px high. */
+
+    body {
+        padding-bottom: 10px;
+        padding-top: 70px;
+    }
+
+ /* Heaven forbid that someone thinks the app isn't working because they have
+  * actually turned JavaScript off, but just in case ... */
+
+    noscript {
+        color: red;
+        font-size: 200%;
+    }
+
+}
+
 /*- vim:set syntax=css: */

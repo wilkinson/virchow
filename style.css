@@ -15,6 +15,12 @@
         padding-top: 70px;
     }
 
+ /* Add a border to the HTML5 Canvas elements to make them visible. */
+
+    canvas {
+        border: 1px solid black;
+    }
+
  /* Heaven forbid that someone thinks the app isn't working because they have
   * actually turned JavaScript off, but just in case ... */
 

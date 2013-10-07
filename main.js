@@ -9,15 +9,25 @@
 
  // Pragmas
 
-    /*jslint indent: 4, maxlen: 80 */
+    /*global jQuery: false */
+
+    /*jslint browser: true, indent: 4, maxlen: 80 */
 
  // Declarations
 
+    var $;
+
  // Definitions
+
+    $ = window.jQuery;
 
  // Out-of-scope definitions
 
- // Invocations
+    $(document).ready(function () {
+     // This function needs documentation.
+        // ...
+        return;
+    });
 
  // That's all, folks!
 

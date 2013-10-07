@@ -43,7 +43,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./">Virchow</a>
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a href="#" class="navbar-brand dropdown-toggle"
+              data-toggle="dropdown">Virchow</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="javascript:console.log('about')">About</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -65,10 +74,20 @@
               data-toggle="dropdown">Algorithm</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="javascript:console.log(1)">Euclidean distance</a>
+                <a href="javascript:console.log('ed')">Euclidean distance</a>
               </li>
               <li>
-                <a href="javascript:console.log(2)">Custom</a>
+                <a href="javascript:console.log('custom')">Custom</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a href="#" class="dropdown-toggle"
+              data-toggle="dropdown">Help</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="javascript:console.log('video')">Watch video</a>
               </li>
             </ul>
           </li>

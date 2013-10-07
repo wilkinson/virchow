@@ -11,16 +11,18 @@
   * padding to the top of the body, and by default the navbar is 50px high. */
 
     body {
-        background-color: #f8f8f8;
+        background-color: black; /* --> '#f8f8f8' */
         padding-bottom: 0px;
         padding-top: 50px;
     }
 
- /* Add a border to the HTML5 Canvas elements to make them visible. */
+ /* Here, we start the HTML5 canvas element(s) out hidden against the black
+  * background because they will be resized by jQuery when the document loads;
+  * this strategy prevents a visible "flash" during the resize. */
 
     canvas {
         background-color: black;
-        border: 1px solid #e6e6e6;
+        border: 1px solid black; /* --> #e6e6e6 */
     }
 
  /* Heaven forbid that someone thinks the app isn't working because they have

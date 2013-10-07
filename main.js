@@ -55,7 +55,9 @@
      // This function needs documentation.
         $('#virchow-canvas')
             .width(window.innerWidth - 10)
-            .height(window.innerHeight - 60);
+            .height(window.innerHeight - 60)
+            .css('border-color', '#e6e6e6');
+        $(document.body).css('background-color', '#f8f8f8');
         return;
     });
 

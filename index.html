@@ -43,7 +43,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Virchow</a>
+        <a class="navbar-brand" href="./">Virchow</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -51,8 +51,24 @@
               data-toggle="dropdown">File</a>
             <ul class="dropdown-menu">
               <li>
+                <input type="file" id="fs-chooser">
+              </li>
+              <li>
                 <input type="dropbox-chooser" id="db-chooser"
                     data-link-type="direct">
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a href="#" class="dropdown-toggle"
+              data-toggle="dropdown">Algorithm</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="javascript:console.log(1)">Euclidean distance</a>
+              </li>
+              <li>
+                <a href="javascript:console.log(2)">Custom</a>
               </li>
             </ul>
           </li>

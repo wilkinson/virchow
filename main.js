@@ -28,7 +28,6 @@
         $('#virchow-canvas')
             .width(window.innerWidth - 10)
             .height(window.innerHeight - 60);
-        console.log('hi');
         return;
     });
 

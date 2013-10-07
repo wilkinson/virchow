@@ -25,7 +25,10 @@
 
     $(document).ready(function () {
      // This function needs documentation.
-        // ...
+        $('#virchow-canvas')
+            .width(window.innerWidth - 10)
+            .height(window.innerHeight - 60);
+        console.log('hi');
         return;
     });
 

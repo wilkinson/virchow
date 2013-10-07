@@ -11,14 +11,16 @@
   * padding to the top of the body, and by default the navbar is 50px high. */
 
     body {
-        padding-bottom: 10px;
-        padding-top: 70px;
+        background-color: #f8f8f8;
+        padding-bottom: 0px;
+        padding-top: 50px;
     }
 
  /* Add a border to the HTML5 Canvas elements to make them visible. */
 
     canvas {
-        border: 1px solid black;
+        background-color: white;
+        border: 1px solid #e6e6e6;
     }
 
  /* Heaven forbid that someone thinks the app isn't working because they have

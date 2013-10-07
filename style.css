@@ -19,7 +19,7 @@
  /* Add a border to the HTML5 Canvas elements to make them visible. */
 
     canvas {
-        background-color: white;
+        background-color: black;
         border: 1px solid #e6e6e6;
     }
 

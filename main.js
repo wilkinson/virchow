@@ -23,6 +23,34 @@
 
  // Out-of-scope definitions
 
+    $('#db-chooser').on('DbxChooserSuccess', function (evt) {
+     // This function is based on documentation from http://goo.gl/Hzq8z5.
+        var canvas, ctx, ext, flag, image, url;
+        canvas = $('#virchow-canvas')[0];
+        ctx = canvas.getContext('2d');
+        ext = evt.originalEvent.files[0].link.split('.').pop().toLowerCase();
+        flag = ((ext === 'bmp')   ||
+                (ext === 'gif')   ||
+                (ext === 'jpg')   ||
+                (ext === 'jpeg')  ||
+                (ext === 'png')   ||
+                (ext === 'tif')   ||
+                (ext === 'tiff'));
+        if (flag === false) {
+            alert('Unsupported file type.');
+            return;
+        }
+        image = new Image();
+        url = evt.originalEvent.files[0].link;
+        image.onload = function () {
+         // This function needs documentation.
+            ctx.drawImage(image, 0, 0);
+            return;
+        };
+        image.src = url;
+        return;
+    });
+
     $(document).ready(function () {
      // This function needs documentation.
         $('#virchow-canvas')

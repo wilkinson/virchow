@@ -60,7 +60,9 @@
 
         $(document.body).css('background-color', '#f8f8f8');
 
-        $(".nav li.disabled a").click(function() {
+        $('.nav li.disabled a').click(function() {
+         // This function disables all DOM elements that have the ".disabled"
+         // CSS class.
             return false;
         });
 

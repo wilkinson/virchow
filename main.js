@@ -2,7 +2,7 @@
 
 //- main.js ~~
 //                                                      ~~ (c) SRW, 07 Oct 2013
-//                                                  ~~ last updated 07 Oct 2013
+//                                                  ~~ last updated 08 Oct 2013
 
 (function () {
     'use strict';
@@ -53,12 +53,20 @@
 
     $(document).ready(function () {
      // This function needs documentation.
+
         $('#virchow-canvas')
             .width(window.innerWidth - 10)
             .height(window.innerHeight - 60)
             .css('border-color', '#e6e6e6');
+
         $(document.body).css('background-color', '#f8f8f8');
+
+        $(".nav li.disabled a").click(function() {
+            return false;
+        });
+
         return;
+
     });
 
  // That's all, folks!

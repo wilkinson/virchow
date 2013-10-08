@@ -23,6 +23,30 @@
 
  // Out-of-scope definitions
 
+    window.VIRCHOW = {
+        run_custom: function (f) {
+         // This function executes a user-specified algorithm on the current
+         // contents of the HTML5 Canvas.
+            var canvas, ctx, i, j, m, n, x;
+            canvas = $('#virchow-canvas')[0];
+            ctx = canvas.getContext('2d');
+            m = canvas.width;
+            n = canvas.height;
+         // The next line is going to cause a problem until I rewrite the
+         // retrieval from Dropbox to use AJAX+CORS instead of an <img> ...
+            x = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            console.log(x);
+         /*
+            for (i = 0; i < m; i += 1) {
+                for (j = 0; j < n; j += 1) {
+
+                }
+            }
+         */
+            return;
+        }
+    };
+
     $('#db-chooser').on('DbxChooserSuccess', function (evt) {
      // This function is based on documentation from http://goo.gl/Hzq8z5.
         var ext, flag, image;

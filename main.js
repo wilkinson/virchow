@@ -11,7 +11,7 @@
 
     /*global jQuery: false */
 
-    /*jslint browser: true, indent: 4, maxlen: 80 */
+    /*jslint browser: true, devel: true, indent: 4, maxlen: 80 */
 
  // Declarations
 
@@ -37,13 +37,17 @@
                 (ext === 'tif')   ||
                 (ext === 'tiff'));
         if (flag === false) {
-            alert('Unsupported file type.');
+            console.error('Error: Unsupported file type.');
             return;
         }
         image = new Image();
         url = evt.originalEvent.files[0].link;
         image.onload = function () {
          // This function needs documentation.
+            console.log('Canvas dimensions:',
+                $('#virchow-canvas').width() + 'x' +
+                $('#virchow-canvas').height());
+            console.log('Image dimensions: ', image.width + 'x' + image.height);
             ctx.drawImage(image, 0, 0);
             return;
         };

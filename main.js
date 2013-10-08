@@ -25,9 +25,7 @@
 
     $('#db-chooser').on('DbxChooserSuccess', function (evt) {
      // This function is based on documentation from http://goo.gl/Hzq8z5.
-        var canvas, ctx, ext, flag, image, url;
-        canvas = $('#virchow-canvas')[0];
-        ctx = canvas.getContext('2d');
+        var ext, flag, image;
         ext = evt.originalEvent.files[0].link.split('.').pop().toLowerCase();
         flag = ((ext === 'bmp')   ||
                 (ext === 'gif')   ||
@@ -41,17 +39,14 @@
             return;
         }
         image = new Image();
-        url = evt.originalEvent.files[0].link;
         image.onload = function () {
          // This function needs documentation.
-            console.log('Canvas dimensions:',
-                $('#virchow-canvas').width() + 'x' +
-                $('#virchow-canvas').height());
-            console.log('Image dimensions: ', image.width + 'x' + image.height);
-            ctx.drawImage(image, 0, 0);
+            $('#virchow-canvas')
+                .height(image.height).width(image.width)[0]
+                    .getContext('2d').drawImage(image, 0, 0);
             return;
         };
-        image.src = url;
+        image.src = evt.originalEvent.files[0].link; // URL
         return;
     });
 

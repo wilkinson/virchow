@@ -38,7 +38,8 @@
              // Chooser.
                 var image = new Image();
                 image.onload = function () {
-                 // This function needs documentation.
+                 // This function is called when the image has been downloaded
+                 // by the browser.
                     $('#virchow-canvas')
                         .height(image.height).width(image.width)[0]
                             .getContext('2d').drawImage(image, 0, 0);

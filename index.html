@@ -2,7 +2,7 @@
 <!--
     index.html ~~
                                                         ~~ (c) SRW, 26 Jul 2013
-                                                    ~~ last updated 08 Oct 2013
+                                                    ~~ last updated 09 Oct 2013
 -->
 <!--[if IE]><![endif]-->
 <html lang="en">
@@ -21,10 +21,6 @@
     <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
     <link rel="stylesheet" media="screen" href="style.css">
-
-  <!--
-    <link rel="shortcut icon" href="https://www.qmachine.org/favicon.ico">
-  -->
 
   </head>
 
@@ -59,6 +55,10 @@
           <li class="dropdown"><a href="#" class="dropdown-toggle"
               data-toggle="dropdown">File</a>
             <ul class="dropdown-menu">
+              <li>
+                <a href="javascript:VIRCHOW.choose()">Choose from Dropbox</a>
+              </li>
+            <!--
               <li class="disabled">
                 <input type="file" id="fs-chooser" disabled>
               </li>
@@ -66,6 +66,7 @@
                 <input type="dropbox-chooser" id="db-chooser"
                     data-link-type="direct">
               </li>
+            -->
             </ul>
           </li>
         </ul>
@@ -99,21 +100,6 @@
     <div class="text-center" id="virchow-approot">
       <canvas id="virchow-canvas" width="300" height="300"></canvas>
     </div>
-
-  <!--
-    <footer class="footer">
-      <div class="container text-center">
-        <p>
-          &copy;
-          <a href="http://seanwilkinson.info">Sean Wilkinson</a> 2010-2013<br>
-          Division of Informatics, Department of Pathology<br>
-          Department of Biomedical Engineering<br>
-          University of Alabama at Birmingham<br>
-          <a href="http://ibl.github.io">Integrative Bioinformatics Laboratory</a>
-        </p>
-      </div>
-    </footer>
-  -->
 
   <!-- Le scripts -->
 

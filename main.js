@@ -9,44 +9,64 @@
 
  // Pragmas
 
-    /*global jQuery: false */
+    /*global Dropbox, jQuery: false */
 
     /*jslint browser: true, devel: true, indent: 4, maxlen: 80 */
 
  // Declarations
 
-    var $;
+    var $, choose, run_custom;
 
  // Definitions
 
     $ = window.jQuery;
 
+    choose = function () {
+     // This function needs documentation.
+        Dropbox.choose({
+            cancel: function () {
+             // This function is called when a user closes the dialog without
+             // selecting a file.
+                alert("Oh no, didn't find what you were looking for?");
+                return;
+            },
+            extensions: ['.jpeg', '.JPG', '.jpg', '.png'],
+            linkType: 'direct',
+            multiselect: false,
+            success: function (files) {
+             // This function is called when a user selects an item in the
+             // Chooser.
+                alert('Here is the file link: ' + files[0].link);
+                console.log(files);
+                return;
+            }
+        });
+        return;
+    };
+
+    run_custom = function (f) {
+     // This function executes a user-specified algorithm on the current
+     // contents of the HTML5 Canvas.
+        var canvas, ctx, i, j, m, n, x;
+        canvas = $('#virchow-canvas')[0];
+        ctx = canvas.getContext('2d');
+        m = canvas.width;
+        n = canvas.height;
+     // The next line is going to cause a problem until I rewrite the retrieval
+     // from Dropbox to use AJAX+CORS instead of an <img> ...
+        x = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        console.log(x);
+        return;
+    };
+
  // Out-of-scope definitions
 
     window.VIRCHOW = {
-        run_custom: function (f) {
-         // This function executes a user-specified algorithm on the current
-         // contents of the HTML5 Canvas.
-            var canvas, ctx, i, j, m, n, x;
-            canvas = $('#virchow-canvas')[0];
-            ctx = canvas.getContext('2d');
-            m = canvas.width;
-            n = canvas.height;
-         // The next line is going to cause a problem until I rewrite the
-         // retrieval from Dropbox to use AJAX+CORS instead of an <img> ...
-            x = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            console.log(x);
-         /*
-            for (i = 0; i < m; i += 1) {
-                for (j = 0; j < n; j += 1) {
-
-                }
-            }
-         */
-            return;
-        }
+        choose: choose,
+        run_custom: run_custom
     };
 
+ /*
     $('#db-chooser').on('DbxChooserSuccess', function (evt) {
      // This function is based on documentation from http://goo.gl/Hzq8z5.
         var ext, flag, image;
@@ -73,6 +93,7 @@
         image.src = evt.originalEvent.files[0].link; // URL
         return;
     });
+ */
 
     $(document).ready(function () {
      // This function needs documentation.

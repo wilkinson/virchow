@@ -36,8 +36,15 @@
             success: function (files) {
              // This function is called when a user selects an item in the
              // Chooser.
-                alert('Here is the file link: ' + files[0].link);
-                console.log(files);
+                var image = new Image();
+                image.onload = function () {
+                 // This function needs documentation.
+                    $('#virchow-canvas')
+                        .height(image.height).width(image.width)[0]
+                            .getContext('2d').drawImage(image, 0, 0);
+                    return;
+                };
+                image.src = files[0].link; // URL
                 return;
             }
         });
@@ -65,35 +72,6 @@
         choose: choose,
         run_custom: run_custom
     };
-
- /*
-    $('#db-chooser').on('DbxChooserSuccess', function (evt) {
-     // This function is based on documentation from http://goo.gl/Hzq8z5.
-        var ext, flag, image;
-        ext = evt.originalEvent.files[0].link.split('.').pop().toLowerCase();
-        flag = ((ext === 'bmp')   ||
-                (ext === 'gif')   ||
-                (ext === 'jpg')   ||
-                (ext === 'jpeg')  ||
-                (ext === 'png')   ||
-                (ext === 'tif')   ||
-                (ext === 'tiff'));
-        if (flag === false) {
-            console.error('Error: Unsupported file type.');
-            return;
-        }
-        image = new Image();
-        image.onload = function () {
-         // This function needs documentation.
-            $('#virchow-canvas')
-                .height(image.height).width(image.width)[0]
-                    .getContext('2d').drawImage(image, 0, 0);
-            return;
-        };
-        image.src = evt.originalEvent.files[0].link; // URL
-        return;
-    });
- */
 
     $(document).ready(function () {
      // This function needs documentation.

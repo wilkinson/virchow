@@ -40,9 +40,17 @@
                 image.onload = function () {
                  // This function is called when the image has been downloaded
                  // by the browser.
+                    var canvas, ctx;
+                    canvas = $('#virchow-canvas')[0];
+                    canvas.style.height = image.height;
+                    canvas.style.width = image.width;
+                    ctx = canvas.getContext('2d');
+                    ctx.drawImage(image, 0, 0, image.width, image.height);
+                 /*
                     $('#virchow-canvas')
                         .height(image.height).width(image.width)[0]
                             .getContext('2d').drawImage(image, 0, 0);
+                 */
                     return;
                 };
                 image.src = files[0].link; // URL

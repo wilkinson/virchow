@@ -2,7 +2,7 @@
 
 //- main.js ~~
 //                                                      ~~ (c) SRW, 07 Oct 2013
-//                                                  ~~ last updated 08 Oct 2013
+//                                                  ~~ last updated 09 Oct 2013
 
 (function () {
     'use strict';
@@ -27,10 +27,10 @@
             cancel: function () {
              // This function is called when a user closes the dialog without
              // selecting a file.
-                alert("Oh no, didn't find what you were looking for?");
+                //alert("Oh no, didn't find what you were looking for?");
                 return;
             },
-            extensions: ['.jpeg', '.JPG', '.jpg', '.png'],
+            extensions: ['images'],
             linkType: 'direct',
             multiselect: false,
             success: function (files) {
@@ -55,6 +55,7 @@
     run_custom = function (f) {
      // This function executes a user-specified algorithm on the current
      // contents of the HTML5 Canvas.
+     /*
         var canvas, ctx, i, j, m, n, x;
         canvas = $('#virchow-canvas')[0];
         ctx = canvas.getContext('2d');
@@ -64,6 +65,8 @@
      // from Dropbox to use AJAX+CORS instead of an <img> ...
         x = ctx.getImageData(0, 0, canvas.width, canvas.height);
         console.log(x);
+     */
+        console.log(f);
         return;
     };
 

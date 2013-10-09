@@ -15,13 +15,13 @@
 
  // Declarations
 
-    var $, choose, run_custom;
+    var $, open, run_custom, save;
 
  // Definitions
 
     $ = window.jQuery;
 
-    choose = function () {
+    open = function () {
      // This function needs documentation.
         Dropbox.choose({
             cancel: function () {
@@ -70,11 +70,18 @@
         return;
     };
 
+    save = function () {
+     // This function is a placeholder.
+        // ...
+        return;
+    };
+
  // Out-of-scope definitions
 
     window.VIRCHOW = {
-        choose: choose,
-        run_custom: run_custom
+        open: open,
+        run_custom: run_custom,
+        save: save
     };
 
     $(document).ready(function () {

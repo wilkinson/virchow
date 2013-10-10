@@ -54,19 +54,9 @@
     };
 
     run_custom = function (f) {
-     // This function executes a user-specified algorithm on the current
-     // contents of the HTML5 Canvas.
-     /*
-        var canvas, ctx, i, j, m, n, x;
-        canvas = $('#virchow-canvas')[0];
-        ctx = canvas.getContext('2d');
-        m = canvas.width;
-        n = canvas.height;
-     // The next line is going to cause a problem until I rewrite the retrieval
-     // from Dropbox to use AJAX+CORS instead of an <img> ...
-        x = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        console.log(x);
-     */
+     // This function, which is currently just a placeholder, will execute a
+     // user-specified algorithm on the current contents of the HTML5 Canvas.
+        // ...
         console.log(f);
         return;
     };
@@ -92,17 +82,6 @@
 
         canvas.height = window.innerHeight - 60;
         canvas.width = window.innerWidth - 10;
-
-        $('#virchow-canvas').css('border-color', '#e6e6e6');
-
-     /*
-        $('#virchow-canvas')
-            .width(window.innerWidth - 10)
-            .height(window.innerHeight - 60)
-            .css('border-color', '#e6e6e6');
-     */
-
-        $(document.body).css('background-color', '#f8f8f8');
 
         $('.nav li.disabled a').click(function() {
          // This function disables all DOM elements that have the ".disabled"

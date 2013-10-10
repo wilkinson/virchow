@@ -2,35 +2,37 @@
 
 /*- style.css ~~
  *                                                      ~~ (c) SRW, 07 Oct 2013
- *                                                  ~~ last updated 07 Oct 2013
+ *                                                  ~~ last updated 10 Oct 2013
  */
 
 @media all {
 
- /* Twitter Bootstrap's fixed navbar overlays other content unless you add
-  * padding to the top of the body, and by default the navbar is 50px high. */
-
     body {
-        background-color: black; /* --> '#f8f8f8' */
+
+     /* Twitter Bootstrap's fixed navbar overlays other content unless you add
+      * padding to the top of the body, and by default the navbar is 50 pixels
+      * tall. */
+
+        background-color: #f8f8f8;
         padding-bottom: 0px;
         padding-top: 50px;
-    }
 
- /* Here, we start the HTML5 canvas element(s) out hidden against the black
-  * background because they will be resized by jQuery when the document loads;
-  * this strategy prevents a visible "flash" during the resize. */
+    }
 
     canvas {
-        background-color: black;
-        border: 1px solid black; /* --> #e6e6e6 */
+
+        border: 1px solid #e6e6e6;
+
     }
 
- /* Heaven forbid that someone thinks the app isn't working because they have
-  * actually turned JavaScript off, but just in case ... */
-
     noscript {
+
+     /* Heaven forbid that someone thinks the app isn't working just because
+      * they have JavaScript turned off, but just in case ... */
+
         color: red;
         font-size: 200%;
+
     }
 
 }

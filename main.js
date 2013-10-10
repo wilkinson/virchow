@@ -41,8 +41,8 @@
                  // This function is called when the image has been downloaded
                  // by the browser. See also: http://goo.gl/uH9byt.
                     var canvas = document.getElementById('virchow-canvas');
-                    canvas.style.height = canvas.height = image.height;
-                    canvas.style.width = canvas.width = image.width;
+                    canvas.height = image.height;
+                    canvas.width = image.width;
                     canvas.getContext('2d').drawImage(image, 0, 0);
                     return;
                 };

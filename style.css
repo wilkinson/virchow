@@ -21,7 +21,7 @@
 
     canvas {
 
-        border: 1px solid #e6e6e6;
+        border: 1px solid #f8f8f8; /* --> #e6e6e6 */
 
     }
 

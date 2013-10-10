@@ -83,6 +83,8 @@
         canvas.height = window.innerHeight - 60;
         canvas.width = window.innerWidth - 10;
 
+        canvas.style['border-color'] = '#e6e6e6';
+
         $('.nav li.disabled a').click(function() {
          // This function disables all DOM elements that have the ".disabled"
          // CSS class.

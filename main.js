@@ -39,10 +39,10 @@
                 var image = new Image();
                 image.onload = function () {
                  // This function is called when the image has been downloaded
-                 // by the browser.
+                 // by the browser. See also: http://goo.gl/uH9byt.
                     var canvas = document.getElementById('virchow-canvas');
-                    canvas.height = image.height;
-                    canvas.width = image.width;
+                    canvas.style.height = canvas.height = image.height;
+                    canvas.style.width = canvas.width = image.width;
                     canvas.getContext('2d').drawImage(image, 0, 0);
                     return;
                 };
@@ -88,10 +88,19 @@
     $(document).ready(function () {
      // This function needs documentation.
 
+        var canvas = document.getElementById('virchow-canvas');
+
+        canvas.height = window.innerHeight - 60;
+        canvas.width = window.innerWidth - 10;
+
+        $('#virchow-canvas').css('border-color', '#e6e6e6');
+
+     /*
         $('#virchow-canvas')
             .width(window.innerWidth - 10)
             .height(window.innerHeight - 60)
             .css('border-color', '#e6e6e6');
+     */
 
         $(document.body).css('background-color', '#f8f8f8');
 

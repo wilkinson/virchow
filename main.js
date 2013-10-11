@@ -2,7 +2,7 @@
 
 //- main.js ~~
 //                                                      ~~ (c) SRW, 07 Oct 2013
-//                                                  ~~ last updated 10 Oct 2013
+//                                                  ~~ last updated 11 Oct 2013
 
 (function () {
     'use strict';
@@ -37,13 +37,18 @@
              // This function is called when a user selects an item in the
              // Chooser.
                 var image = new Image();
+                image.crossOrigin = 'Anonymous';
                 image.onload = function () {
                  // This function is called when the image has been downloaded
                  // by the browser. See also: http://goo.gl/uH9byt.
-                    var canvas = document.getElementById('virchow-canvas');
+                    var canvas, ctx, data;
+                    canvas = document.getElementById('virchow-canvas');
                     canvas.height = image.height;
                     canvas.width = image.width;
-                    canvas.getContext('2d').drawImage(image, 0, 0);
+                    ctx = canvas.getContext('2d');
+                    ctx.drawImage(image, 0, 0);
+                    data = ctx.getImageData(0, 0, image.width, image.height);
+                    console.log(data);
                     return;
                 };
                 image.src = files[0].link; // URL

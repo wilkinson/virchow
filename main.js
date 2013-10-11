@@ -15,7 +15,7 @@
 
  // Declarations
 
-    var $, open, read_data_from_canvas, run_custom, save;
+    var $, open, read_data_from_canvas, run, save;
 
  // Definitions
 
@@ -65,7 +65,7 @@
         return data;
     };
 
-    run_custom = function (f) {
+    run = function (f) {
      // This function, which is currently just a placeholder, will execute a
      // user-specified algorithm on the current contents of the HTML5 Canvas.
         // ...
@@ -84,7 +84,7 @@
     window.VIRCHOW = {
         open: open,
         read_data_from_canvas: read_data_from_canvas,
-        run_custom: run_custom,
+        run: run,
         save: save
     };
 

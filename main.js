@@ -15,7 +15,7 @@
 
  // Declarations
 
-    var $, open, run_custom, save;
+    var $, open, read_data_from_canvas, run_custom, save;
 
  // Definitions
 
@@ -35,20 +35,18 @@
             multiselect: false,
             success: function (files) {
              // This function is called when a user selects an item in the
-             // Chooser.
+             // Chooser. Because Dropbox supports CORS, we can load the image
+             // directly into the canvas -- see http://goo.gl/RJR16.
                 var image = new Image();
                 image.crossOrigin = 'Anonymous';
                 image.onload = function () {
                  // This function is called when the image has been downloaded
                  // by the browser. See also: http://goo.gl/uH9byt.
-                    var canvas, ctx, data;
-                    canvas = document.getElementById('virchow-canvas');
+                    var canvas = document.getElementById('virchow-canvas');
                     canvas.height = image.height;
                     canvas.width = image.width;
-                    ctx = canvas.getContext('2d');
-                    ctx.drawImage(image, 0, 0);
-                    data = ctx.getImageData(0, 0, image.width, image.height);
-                    console.log(data);
+                    canvas.getContext('2d').drawImage(image, 0, 0);
+                    console.log(read_data_from_canvas());
                     return;
                 };
                 image.src = files[0].link; // URL
@@ -56,6 +54,15 @@
             }
         });
         return;
+    };
+
+    read_data_from_canvas = function () {
+     // This function needs documentation.
+        var canvas, ctx, data;
+        canvas = document.getElementById('virchow-canvas');
+        ctx = canvas.getContext('2d');
+        data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        return data;
     };
 
     run_custom = function (f) {
@@ -76,6 +83,7 @@
 
     window.VIRCHOW = {
         open: open,
+        read_data_from_canvas: read_data_from_canvas,
         run_custom: run_custom,
         save: save
     };

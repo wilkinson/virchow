@@ -2,7 +2,7 @@
 
 /*- style.css ~~
  *                                                      ~~ (c) SRW, 07 Oct 2013
- *                                                  ~~ last updated 10 Oct 2013
+ *                                                  ~~ last updated 11 Oct 2013
  */
 
 @media all {
@@ -14,7 +14,7 @@
       * tall. */
 
         background-color: #f8f8f8;
-        padding-bottom: 0px;
+        padding-bottom: 0;
         padding-top: 50px;
 
     }

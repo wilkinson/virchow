@@ -2,14 +2,14 @@
 
 //- main.js ~~
 //                                                      ~~ (c) SRW, 07 Oct 2013
-//                                                  ~~ last updated 11 Oct 2013
+//                                                  ~~ last updated 13 Oct 2013
 
 (function () {
     'use strict';
 
  // Pragmas
 
-    /*global Dropbox, jQuery: false */
+    /*global Dropbox, jQuery: false, QM: false */
 
     /*jslint browser: true, devel: true, indent: 4, maxlen: 80 */
 
@@ -68,6 +68,8 @@
     run = function (f) {
      // This function, which is currently just a placeholder, will execute a
      // user-specified algorithm on the current contents of the HTML5 Canvas.
+     // It will divide the image into smaller pieces for distributed execution
+     // using QMachine (https://www.qmachine.org).
         // ...
         console.log(f);
         return;

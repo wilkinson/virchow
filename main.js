@@ -2,7 +2,7 @@
 
 //- main.js ~~
 //                                                      ~~ (c) SRW, 07 Oct 2013
-//                                                  ~~ last updated 14 Oct 2013
+//                                                  ~~ last updated 15 Oct 2013
 
 (function () {
     'use strict';
@@ -141,7 +141,35 @@
 
     save = function () {
      // This function is a placeholder.
-        // ...
+        var canvas = document.getElementById('virchow-canvas');
+        Dropbox.save({
+            cancel: function () {
+             // This function needs documentation.
+                console.log('cancel');
+                return;
+            },
+            error: function (err) {
+             // This function needs documentation.
+                console.log('error:', err);
+                return;
+            },
+            files: [
+                {
+                    filename: 'foo.png',
+                    url: canvas.toDataURL()
+                }
+            ],
+            progress: function (progress) {
+             // This function needs documentation.
+                console.log('progress:', progress);
+                return;
+            },
+            success: function () {
+             // This function needs documentation.
+                console.log('success');
+                return;
+            }
+        });
         return;
     };
 

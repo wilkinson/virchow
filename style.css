@@ -2,7 +2,7 @@
 
 /*- style.css ~~
  *                                                      ~~ (c) SRW, 07 Oct 2013
- *                                                  ~~ last updated 11 Oct 2013
+ *                                                  ~~ last updated 01 Dec 2013
  */
 
 @media all {
@@ -21,7 +21,7 @@
 
     canvas {
 
-        border: 1px solid #f8f8f8; /* --> #e6e6e6 */
+        border: 1px solid #f8f8f8;
 
     }
 
@@ -33,6 +33,19 @@
         color: red;
         font-size: 200%;
 
+    }
+
+}
+
+@media (max-width: 767px) {
+
+ /* We are using the navbar-brand as a dropdown instead of as a link, which is
+  * not supported in Bootstrap 3.0.2. Everything looks fine on large screens,
+  * and this rule indents the brand correctly so that it aligns with the left
+  * edge of the body for small screens. */
+
+    .navbar-brand {
+        margin-left: 15px;
     }
 
 }
